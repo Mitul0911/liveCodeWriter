@@ -53,7 +53,34 @@ label {
     display: flex;
     align-items: center;
     background: black;
-    height: 30px;
+    height: 35px;
     margin-bottom: 2px;
     border-radius: 5px;
+}
+
+label .download {
+    margin-left: auto;
+    position: relative;
+}
+
+label .download::after {
+    content: "Download File";
+    position: absolute;
+    top: -30px;
+    left: 0;
+    display: none;
+    background: rgb(92, 87, 87);
+    font-size: 8px;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+label .download:hover {
+    cursor: pointer;
+}
+
+label .download:hover::after {
+    display: block;
 }

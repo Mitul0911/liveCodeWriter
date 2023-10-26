@@ -20,3 +20,41 @@ function show() {
 }
 
 show();
+
+function downloadHTML() {
+    console.log("in function");
+    let htmlContent = document.getElementById("html-code").value;
+    console.log(htmlContent);
+    let blob = new Blob([htmlContent], { type: "text/plain" });
+    console.log(blob);
+    let url = window.URL.createObjectURL(blob);
+    console.log(url);
+    let a = document.getElementById("downloadLink");
+    console.log(a);
+    a.href = url;
+    a.download = "html.txt";
+    a.click();
+    window.URL.revokeObjectURL(url);
+}
+
+function downloadCSS () {
+    let htmlContent = document.getElementById("css-code").value;
+    let blob = new Blob([htmlContent], { type: "text/plain" });
+    let url = window.URL.createObjectURL(blob);
+    let a = document.getElementById("downloadLink");
+    a.href = url;
+    a.download = "css.txt";
+    a.click();
+    window.URL.revokeObjectURL(url);
+}
+
+function downloadJS() {
+    let htmlContent = document.getElementById("js-code").value;
+    let blob = new Blob([htmlContent], { type: "text/plain" });
+    let url = window.URL.createObjectURL(blob);
+    let a = document.getElementById("downloadLink");
+    a.href = url;
+    a.download = "javascript.txt";
+    a.click();
+    window.URL.revokeObjectURL(url);
+}
